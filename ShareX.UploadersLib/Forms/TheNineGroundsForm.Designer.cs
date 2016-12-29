@@ -90,6 +90,7 @@
             this.login_button.TabIndex = 5;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.Click += new System.EventHandler(this.button_click);
             // 
             // TheNineGroundsForm
             // 

@@ -164,6 +164,12 @@
     <Compile Include="Forms\PuushLoginForm.Designer.cs">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TheNineGroundsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TheNineGroundsForm.Designer.cs">
+      <DependentUpon>TheNineGroundsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -593,6 +599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.zh-CN.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TheNineGroundsForm.resx">
+      <DependentUpon>TheNineGroundsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.de.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
