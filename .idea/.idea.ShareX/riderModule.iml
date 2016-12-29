@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.Config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.exe" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.nuget/NuGet.targets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Greenshot.ImageEditor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Lib/7z-x64.dll" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../Lib/7z.dll" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../packages/AWSSDK.S3.3.1.10.0/analyzers/dotnet/cs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.Chrome" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.HelpersLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.HistoryLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.ImageEffectsLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.IndexerLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.MediaLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.ScreenCaptureLib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.Setup" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.Steam" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareX.UploadersLib" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Greenshot.ImageEditor/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Greenshot.ImageEditor/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Chrome/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Chrome/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.HelpersLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.HelpersLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.HistoryLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.HistoryLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.ImageEffectsLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.ImageEffectsLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.IndexerLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.IndexerLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.MediaLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.MediaLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.ScreenCaptureLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.ScreenCaptureLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Setup/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Setup/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Steam/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.Steam/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.UploadersLib/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX.UploadersLib/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ShareX/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../packages" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
