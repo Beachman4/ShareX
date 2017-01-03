@@ -40,6 +40,17 @@ namespace ShareX.UploadersLib.FileUploaders
 		public const string TheNineGroundsUploadURL = TheNineGroundsURL + "/upload";
 		public const string TheNinegroundsLoginURL = TheNineGroundsURL + "/api/login";
 
+		public string ApiKey { get; set; }
+
+		public TheNineGrounds()
+		{
+
+		}
+
+		public TheNineGrounds(string ApiKey)
+		{
+			ApiKey = ApiKey;
+		}
 
 		public string Login(string email, string password)
 		{
@@ -61,8 +72,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
 		public override UploadResult Upload(Stream stream, string fileName)
 		{
-
-
+			NameValueCollection headers = new NameValueCollection();
+			headers.Add("apiKey", APIKeys
 		}
 
 	}
