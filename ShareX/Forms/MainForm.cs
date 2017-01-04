@@ -53,7 +53,8 @@ namespace ShareX
 
         private void MainForm_HandleCreated(object sender, EventArgs e)
         {
-            RunPuushTasks();
+            //RunPuushTasks();
+            RunT9GTasks();
 
             UpdateControls();
 
@@ -909,6 +910,34 @@ namespace ShareX
                         {
                             Program.UploadersConfig.PuushAPIKey = puushLoginForm.APIKey;
                         }
+                    }
+                }
+            }
+        }
+
+        private void RunT9GTasks()
+        {
+            if (Program.Settings.IsFirstTimeRun)
+            {
+                using (TheNineGroundsForm TheNineGroundsForm = new TheNineGroundsForm())
+                {
+                    if (TheNineGroundsForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Program.DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
+                        Program.DefaultTaskSettings.ImageFileDestination = FileDestination.TheNineGrounds;
+                        Program.DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
+                        Program.DefaultTaskSettings.TextFileDestination = FileDestination.TheNineGrounds;
+                        Program.DefaultTaskSettings.FileDestination = FileDestination.TheNineGrounds;
+                    }
+
+                    if (Program.UploadersConfig == null)
+                    {
+                        Program.UploaderSettingsResetEvent.WaitOne(5000);
+                    }
+
+                    if (Program.UploadersConfig != null)
+                    {
+                        Program.UploadersConfig.T9GApiKey = TheNineGroundsForm.ApiKey;
                     }
                 }
             }

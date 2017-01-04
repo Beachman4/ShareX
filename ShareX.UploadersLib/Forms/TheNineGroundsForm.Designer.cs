@@ -1,4 +1,4 @@
-﻿namespace ShareX.UploadersLib.Forms
+﻿namespace ShareX.UploadersLib
 {
     partial class TheNineGroundsForm
     {

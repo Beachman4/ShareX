@@ -386,8 +386,9 @@ namespace ShareX.UploadersLib
 
             txtPuushAPIKey.Text = Config.PuushAPIKey;
 
-			//T9G
+            //T9G
 
+            txtT9GApiKey.Text = Config.T9GApiKey;
 
             // Minus
 
@@ -1574,9 +1575,59 @@ namespace ShareX.UploadersLib
 
 		#region t9g
 
+        private bool T9GValidationCheck()
+        {
+            bool result = true;
 
+            if (string.IsNullOrEmpty(txtT9GEmail.Text))
+            {
+                txtT9GEmail.BackColor = Color.FromArgb(255, 200, 200);
+                result = false;
+            } else
+            {
+                txtT9GEmail.BackColor = SystemColors.Window;
+            }
+            if (string.IsNullOrEmpty(txtT9GPassword.Text))
+            {
+                txtT9GPassword.BackColor = Color.FromArgb(255, 200, 200);
+                result = false;
+            } else
+            {
+                txtT9GPassword.BackColor = SystemColors.Window;
+            }
 
-		#endregion
+            return result;
+        }
+
+        private void llT9GCreateAccount_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(TheNineGrounds.TheNineGroundsRegisterURL);
+        }
+
+        private void btnT9GLogin_Click(object sender, EventArgs e)
+        {
+            if (T9GValidationCheck())
+            {
+                txtT9GApiKey.Text = "";
+
+                string ApiKey = new TheNineGrounds().Login(txtT9GEmail.Text, txtT9GPassword.Text);
+
+                if (!string.IsNullOrEmpty(ApiKey))
+                {
+                    txtT9GApiKey.Text = ApiKey;
+                } else
+                {
+                    MessageBox.Show("Login Failed.", "Authentication Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtT9GApiKey_txtChanged(object sender, EventArgs e)
+        {
+            Config.T9GApiKey = txtT9GApiKey.Text;
+        }
+
+        #endregion
 
         #region Box
 

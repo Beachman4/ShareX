@@ -426,6 +426,16 @@
             this.nudEmailSmtpPort = new System.Windows.Forms.NumericUpDown();
             this.lblEmailSmtpPort = new System.Windows.Forms.Label();
             this.txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
+            this.tpT9G = new System.Windows.Forms.TabPage();
+            this.llT9GCreateAccount = new System.Windows.Forms.LinkLabel();
+            this.lblT9GApiKey = new System.Windows.Forms.Label();
+            this.txtT9GApiKey = new System.Windows.Forms.TextBox();
+            this.btnT9GLogin = new System.Windows.Forms.Button();
+            this.lblT9GEmail = new System.Windows.Forms.Label();
+            this.lblT9GPassword = new System.Windows.Forms.Label();
+            this.txtT9GPassword = new System.Windows.Forms.TextBox();
+            this.txtT9GEmail = new System.Windows.Forms.TextBox();
+            this.lblT9GTitle = new System.Windows.Forms.Label();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -621,6 +631,7 @@
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
+            this.tpT9G.SuspendLayout();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1678,6 +1689,7 @@
             this.tcFileUploaders.Controls.Add(this.tpUplea);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
+            this.tcFileUploaders.Controls.Add(this.tpT9G);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";
@@ -3530,6 +3542,73 @@
             this.txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
             this.txtEmailDefaultSubject.TextChanged += new System.EventHandler(this.txtDefaultSubject_TextChanged);
             // 
+            // tpT9G
+            // 
+            this.tpT9G.Controls.Add(this.llT9GCreateAccount);
+            this.tpT9G.Controls.Add(this.lblT9GApiKey);
+            this.tpT9G.Controls.Add(this.txtT9GApiKey);
+            this.tpT9G.Controls.Add(this.btnT9GLogin);
+            this.tpT9G.Controls.Add(this.lblT9GEmail);
+            this.tpT9G.Controls.Add(this.lblT9GPassword);
+            this.tpT9G.Controls.Add(this.txtT9GPassword);
+            this.tpT9G.Controls.Add(this.txtT9GEmail);
+            this.tpT9G.Controls.Add(this.lblT9GTitle);
+            resources.ApplyResources(this.tpT9G, "tpT9G");
+            this.tpT9G.Name = "tpT9G";
+            this.tpT9G.UseVisualStyleBackColor = true;
+            // 
+            // llT9GCreateAccount
+            // 
+            resources.ApplyResources(this.llT9GCreateAccount, "llT9GCreateAccount");
+            this.llT9GCreateAccount.Name = "llT9GCreateAccount";
+            this.llT9GCreateAccount.TabStop = true;
+            this.llT9GCreateAccount.Click += new System.EventHandler(this.llT9GCreateAccount_Click);
+            // 
+            // lblT9GApiKey
+            // 
+            resources.ApplyResources(this.lblT9GApiKey, "lblT9GApiKey");
+            this.lblT9GApiKey.Name = "lblT9GApiKey";
+            // 
+            // txtT9GApiKey
+            // 
+            resources.ApplyResources(this.txtT9GApiKey, "txtT9GApiKey");
+            this.txtT9GApiKey.Name = "txtT9GApiKey";
+            this.txtT9GApiKey.UseSystemPasswordChar = true;
+            this.txtT9GApiKey.TextChanged += new System.EventHandler(this.txtT9GApiKey_txtChanged);
+            // 
+            // btnT9GLogin
+            // 
+            resources.ApplyResources(this.btnT9GLogin, "btnT9GLogin");
+            this.btnT9GLogin.Name = "btnT9GLogin";
+            this.btnT9GLogin.UseVisualStyleBackColor = true;
+            this.btnT9GLogin.Click += new System.EventHandler(this.btnT9GLogin_Click);
+            // 
+            // lblT9GEmail
+            // 
+            resources.ApplyResources(this.lblT9GEmail, "lblT9GEmail");
+            this.lblT9GEmail.Name = "lblT9GEmail";
+            // 
+            // lblT9GPassword
+            // 
+            resources.ApplyResources(this.lblT9GPassword, "lblT9GPassword");
+            this.lblT9GPassword.Name = "lblT9GPassword";
+            // 
+            // txtT9GPassword
+            // 
+            resources.ApplyResources(this.txtT9GPassword, "txtT9GPassword");
+            this.txtT9GPassword.Name = "txtT9GPassword";
+            this.txtT9GPassword.UseSystemPasswordChar = true;
+            // 
+            // txtT9GEmail
+            // 
+            resources.ApplyResources(this.txtT9GEmail, "txtT9GEmail");
+            this.txtT9GEmail.Name = "txtT9GEmail";
+            // 
+            // lblT9GTitle
+            // 
+            resources.ApplyResources(this.lblT9GTitle, "lblT9GTitle");
+            this.lblT9GTitle.Name = "lblT9GTitle";
+            // 
             // btnCopyShowFiles
             // 
             resources.ApplyResources(this.btnCopyShowFiles, "btnCopyShowFiles");
@@ -4633,6 +4712,8 @@
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
+            this.tpT9G.ResumeLayout(false);
+            this.tpT9G.PerformLayout();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -5168,6 +5249,7 @@
         public System.Windows.Forms.TabPage tpStreamable;
         public System.Windows.Forms.TabPage tpSharedFolder;
         public System.Windows.Forms.TabPage tpEmail;
+        public System.Windows.Forms.TabPage tpT9G;
         public System.Windows.Forms.TabPage tpBitly;
         public System.Windows.Forms.TabPage tpGoogleURLShortener;
         public System.Windows.Forms.TabPage tpYourls;
@@ -5212,5 +5294,14 @@
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
         private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
         private System.Windows.Forms.CheckBox cbPolrIsSecret;
+        private System.Windows.Forms.Label lblT9GApiKey;
+        private System.Windows.Forms.TextBox txtT9GApiKey;
+        private System.Windows.Forms.Button btnT9GLogin;
+        private System.Windows.Forms.Label lblT9GEmail;
+        private System.Windows.Forms.Label lblT9GPassword;
+        private System.Windows.Forms.TextBox txtT9GPassword;
+        private System.Windows.Forms.TextBox txtT9GEmail;
+        private System.Windows.Forms.Label lblT9GTitle;
+        private System.Windows.Forms.LinkLabel llT9GCreateAccount;
     }
 }

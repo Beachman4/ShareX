@@ -166,6 +166,10 @@ namespace ShareX.UploadersLib
 
         public string PuushAPIKey = "";
 
+        // The Nine Grounds
+
+        public string T9GApiKey = "";
+
         // SendSpace
 
         public AccountType SendSpaceAccountType = AccountType.Anonymous;

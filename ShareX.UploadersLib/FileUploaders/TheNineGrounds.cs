@@ -29,16 +29,37 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Collections.Specialized;
-
+using System;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
 
+    public class TheNineGroundsUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.TheNineGrounds;
+
+        public override Icon ServiceIcon => Resources.puush;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.T9GApiKey);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TheNineGrounds(config.T9GApiKey);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpT9G;
+    }
+
 	class TheNineGrounds : FileUploader
 	{
-		public const string TheNineGroundsURL = "http://upload.the9grounds.com";
-		public const string TheNineGroundsUploadURL = TheNineGroundsURL + "/upload";
-		public const string TheNinegroundsLoginURL = TheNineGroundsURL + "/api/login";
+		public const string TheNineGroundsURL = "http://localhost";
+		public const string TheNineGroundsUploadURL = TheNineGroundsURL + "/api/upload";
+		public const string TheNineGroundsLoginURL = TheNineGroundsURL + "/api/login";
+
+        public const string TheNineGroundsRegisterURL = TheNineGroundsURL + "/register";
 
 		public string ApiKey { get; set; }
 
@@ -47,21 +68,22 @@ namespace ShareX.UploadersLib.FileUploaders
 
 		}
 
-		public TheNineGrounds(string ApiKey)
+		public TheNineGrounds(string Apikey)
 		{
-			ApiKey = ApiKey;
+			ApiKey = Apikey;
 		}
 
 		public string Login(string email, string password)
 		{
-			Dictionary<string, string> arguments = new Dictionary<string, string>;
+			Dictionary<string, string> arguments = new Dictionary<string, string>();
 			arguments.Add("email", email);
 			arguments.Add("password", password);
 
-			string response = SendRequestMultiPart(TheNinegroundsLoginURL, arguments);
+			string response = SendRequestMultiPart(TheNineGroundsLoginURL, arguments);
 
 			if (!string.IsNullOrEmpty(response))
 			{
+                System.Console.WriteLine(response);
 				return response;
 			}
 
@@ -73,7 +95,41 @@ namespace ShareX.UploadersLib.FileUploaders
 		public override UploadResult Upload(Stream stream, string fileName)
 		{
 			NameValueCollection headers = new NameValueCollection();
-			headers.Add("apiKey", APIKeys
+            headers.Add("apiKey", ApiKey);
+            System.Console.WriteLine(TheNineGroundsUploadURL);
+            UploadResult result = SendRequestFile(TheNineGroundsUploadURL, stream, fileName, "file", null, headers);
+
+            System.Console.WriteLine(result.Response);
+
+            if (result.IsSuccess)
+            {
+                string[] values = result.Response.Split(',');
+
+                if (values != null && values.Length > 1)
+                {
+                    int status;
+
+                    if (!int.TryParse(values[0], out status))
+                    {
+                        status = -2;
+                    }
+
+                    if (status < 0)
+                    {
+                        switch (status)
+                        {
+                            case -1:
+                                Errors.Add("Authentication failure.");
+                                break;
+                        }
+                    } else
+                    {
+                        result.URL = values[1];
+                    }
+                }
+            }
+
+            return result;
 		}
 
 	}

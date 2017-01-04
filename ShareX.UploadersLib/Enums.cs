@@ -98,6 +98,8 @@ namespace ShareX.UploadersLib
         GoogleDrive,
         [Description("puush")]
         Puush,
+        [Description("T9G")]
+        TheNineGrounds,
         [Description("Box")]
         Box,
         [Description("MEGA")]
